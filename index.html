@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <span class="wordmark">Secure Portal</span>
+
+  <h2>Sign In</h2>
+  <p class="subtitle">Enter your credentials to continue</p>
+
+  <div class="field">
+    <label for="username">Username or Email</label>
+    <input type="text" id="username" placeholder="you@example.com">
+  </div>
+
+  <div class="field">
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="••••••••">
+  </div>
+
+  <button onclick="login()"><span>Continue →</span></button>
+
+  <p id="msgBox" style="display:none; margin-top:14px; font-size:12px; letter-spacing:0.05em;"></p>
+
+  <div class="links">
+    <a href="forgot.html">Forgot your password?</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

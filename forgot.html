@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <span class="wordmark">Secure Portal</span>
+
+  <h2>Reset</h2>
+  <p class="subtitle">We'll send a link to your email</p>
+
+  <div class="field">
+    <label for="account">Email or Phone Number</label>
+    <input type="text" id="account" placeholder="you@example.com">
+  </div>
+
+  <button onclick="resetPassword()"><span>Send Reset Link →</span></button>
+
+  <p id="msgBox" style="display:none; margin-top:14px; font-size:12px; letter-spacing:0.05em;"></p>
+
+  <div class="links">
+    <a href="login.html">← Back to sign in</a>
+  </div>
+</div>
+
+<script src="script2.js"></script>
+</body>
+</html>
