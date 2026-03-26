@@ -263,3 +263,14 @@ button:active { transform: scale(0.98); }
 
 .logout-btn:hover { color: var(--bg); }
 .logout-btn::after { background: var(--text-muted); }
+/* Add this if you want a subtle secondary button look */
+.secondary-link-btn {
+  border-color: var(--border);
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.secondary-link-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
