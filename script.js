@@ -9,31 +9,53 @@ function showMessage(msg, color) {
 function login() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-
+    var registeredUser = localStorage.getItem("latestUser");
+    var registeredPass = localStorage.getItem("latestPass");
+    if (username === registeredUser && password === registeredPass) {
+        window.location.replace("dashboard.html");
+        return;
+    }
     if (username == "") {
-        showMessage("Please enter your username or email.", "red");
+        alert("Please enter your email.");
         return;
     }
-
     if (password == "") {
-        showMessage("Please enter your password.", "red");
+        alert("Please enter your password.");
         return;
     }
 
-    var found = false;
+    var emailExists = false;
+    var passwordMatches = false;
 
     for (var i = 0; i < users.length; i++) {
-        if (users[i] == username && passwords[i] == password) {
-            found = true;
-            showMessage("Login successful! Redirecting...", "green");
-            window.location.replace("dashboard.html");
+        if (users[i] === username) {
+            emailExists = true;
+            if (passwords[i] === password) {
+                passwordMatches = true;
+            }
+            break; 
         }
     }
 
+    if (emailExists && passwordMatches) {
+        alert("Login successful!");
+        window.location.replace("dashboard.html");
+    } 
+    else if (emailExists && !passwordMatches) {
+        alert("Incorrect password. Please try again.");
+    } 
+    else if (!emailExists) {
+        alert("Email not found. Please sign up first.");
+    }
+    var found = false;
+    for (var i = 0; i < users.length; i++) {
+        if (users[i] == username && passwords[i] == password) {
+            found = true;
+            window.location.replace("dashboard.html");
+        }
+    }
     if (found == false) {
         showMessage("Invalid username or password.", "red");
     }
 }
-function logout() {
-    window.location.replace("index.html");
-}
+    
