@@ -44,7 +44,7 @@ function login() {
     else if (emailExists && !passwordMatches) {
         alert("Incorrect password. Please try again.");
     } 
-    else if (!emailExists) {
+    else if (!emailExists && passwordMatches) {
         alert("Email not found. Please sign up first.");
     }
     var found = false;
